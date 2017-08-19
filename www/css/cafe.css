@@ -1,0 +1,133 @@
+ .menu-img{
+	width:135px; 
+	height:135px; 
+	float:left; 
+	margin: 5px 10px; 
+	top: 10px;
+	left:50px; 
+	border:0px solid #000;}
+	
+.menu-img img {
+	width: 133px; 
+	height: 113px;}
+	
+.menu-img p{ 
+	text-align: center; 
+	border: 1px solid #000; 
+	height:20px;
+	background: #888;}
+
+.appHeader{ 
+	background: #000; 
+	padding: 5px 10px; 
+	text-align:center;
+	margin-bottom: 0px;}
+	
+.appHeader p{ 
+	color: #DDD; 
+	font-size: 24pt; 
+	margin:0; 
+	padding: 0; }
+	
+.appContent{ 
+	border: 1px solid #000; }
+	
+.spacer{
+	height: 40px; }
+	
+.appFooter{
+	background: #333; 
+	padding: 5px; 
+	height: 40px; 
+	width: 220px;
+	bottom: 0px; 
+	margin: auto;}
+
+.appFooter p {
+	color: #FFF; 
+	text-align:center; 
+	font-size: 18px;}
+
+#table-number{ 
+	padding: 5px; 
+	margin: 1px 5px; 
+	font-size: 20px; }
+
+#table-id { 
+	display: inline-block; 
+	width: 55px; 
+	text-align: right;
+	margin-left: 20px;}
+
+.orderid {
+	margin: 2px 0;}
+
+.orderid label{
+	font-size: 14px; 
+	width: 100px;}
+	
+.orderform {
+	width: 190px; 
+	padding: 0px;}
+
+#btnChMenu{display:none;}
+
+.order-group { 
+	margin: 5px; 
+	border: 1px solid #000;
+	min-height: 75px;}
+	
+.order-group-title{ 
+	font-size: 16px; 
+	background: #888; 
+	color: #FFF;
+	padding: 8px 10px;}
+	
+.addOrder {
+	float:right; 
+	width: 75px; 
+	color: #FFF; 
+	background: #555;
+	text-align: center; 
+	padding: 2px 0px; 
+	text-decoration: none;}
+	
+.order-list-item {
+	margin: 20x; 
+	font-size: 10pt;}
+
+.order-list-item li {
+	list-style-type:none; 
+	padding: 5px 10px; 
+	border: 1px solid #000; 
+	margin: 2px}
+	
+.price {
+	float:right; 
+	text-align: right; 
+	width: 100px; 
+	background: #EEE;
+	padding-right: 5px;}
+	
+#grandTotal{ padding: 5px 20px; }
+
+.menu-group {
+	min-height: 400px; 
+	margin: 5px; 
+	padding: 5px;}
+	
+.menu-list {
+	border:1px solid #000; 
+	padding: 10px; 
+	list-style-type: none;
+	margin: 5px 0px;
+	font-size:10pt;}
+	
+.menu-list .menu-check {margin: 0 5px;}
+
+.menu-qty input {
+	width: 45px; 
+	float:right; 
+	text-align: right;}
+
+.delOrder{font-weight: bold; color: #800000; }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
+        <meta http-equiv="Content-Security-Policy" 
+         content="default-src *; 
+                  style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <script type="text/javascript" src="js/jquery.min.js" ></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <!-- bootstrap -->
+        
+        <link rel="stylesheet" type="text/css" href="css/cafe.css" />
+        <script type="text/javascript" src="js/omahAl.js" ></script>
+        <script type="text/javascript" src="js/order.js"></script>
+        
+        <title>spicy ayam</title>
+    </head>
+    <body>
+	  <div class='appHeader'>
+	  <p>DAFTAR PESANAN</p>
+	  </div>
+	  <div id='table-number'>
+		  <div class='orderid'>
+			  <label>Order ID</label>
+			  <input readonly type="text" class="orderform" id="orderId" />
+		  </div>
+		  
+		  <div class='orderid'>
+			  <label>Pemesan</label>
+			  <input readonly type="text" class="orderform" id="pemesan" />
+		  </div>
+	  </div>
+
+	  <div class='order-group'>
+	    <div class='order-group-title'>
+			Makanan
+			<a href=# class='addOrder' id='orderMakanan'>Tambah</a>
+	    </div>
+	    <div class='order-list-item' id="listMakanan">
+			<!--
+			<li>999 x Makanan 1 <span class='price'>999</span></li>
+			<li>999 x Makanan 2 <span class='price'>999</span></li>
+			<li>999 x Makanan 3 <span class='price'>999</span></li>
+			<li>999 x Makanan 4 <span class='price'>999</span></li>
+			-->
+	    </div>
+	  </div>
+	  
+	  <div class='order-group'>
+	    <div class='order-group-title'>
+			Minuman
+			<a href=# class='addOrder' id='orderMinuman'>Tambah</a>
+	    </div>
+	    <div class='order-list-item' id="listMinuman">
+			<!--
+			<li>999 x Minuman 1 <span class='price'>999</span></li>
+			<li>999 x Minuman 2 <span class='price'>999</span></li>
+			<li>999 x Minuman 3 <span class='price'>999</span></li>
+			<li>999 x Minuman 4 <span class='price'>999</span></li>
+			-->
+	    </div>
+	  </div>
+	  
+	  <div class='order-group'>
+	    <div class='order-group-title'>
+			Camilan
+			<a href=# class='addOrder' id='orderCamilan'>Tambah</a>
+	    </div>
+	    <div class='order-list-item' id="listCamilan">
+			<!--
+			<li>999 x Camilan 1 <span class='price'>999</span></li>
+			<li>999 x Camilan 2 <span class='price'>999</span></li>
+			<li>999 x Camilan 3 <span class='price'>999</span></li>
+			<li>999 x Camilan 4 <span class='price'>999</span></li>
+			-->
+	    </div>
+	  </div>
+	  <div id="grandTotal">
+		  
+	  </div>
+	  <div class="appFooter"><p id="done">Done</p></div>
+    </body>
+</html>
