@@ -125,9 +125,11 @@
 	
 .menu-list .menu-check {margin: 0 5px;}
 
-.menu-qty input {
+.menu-qty a {
 	width: 45px; 
 	float:right; 
 	text-align: right;}
 
 .delOrder{font-weight: bold; color: #800000; }
+
+label.mdLabel {width:120px;}

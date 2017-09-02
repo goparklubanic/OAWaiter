@@ -1,7 +1,8 @@
 //var urlservice = "http://nujessie.mugeno.org/ngh/pashacafe/waiter/";
+var cat = localStorage.getItem('cat');
+var oid = localStorage.getItem('order_id');
 $("document").ready(function(){
-	var cat = localStorage.getItem('cat');
-	var oid = localStorage.getItem('order_id');
+
 	
 	$('#cat').html(cat.toUpperCase());
 	
@@ -10,12 +11,9 @@ $("document").ready(function(){
 			var stok = parseInt(menu.stok);
 			if(stok >=10 ){ var stk='10+'; }else{ var stk=menu.stok; }
 			$('#menuList').append(
-			"<li class='menu-list'>"+
-			"<span class='menu-check'>"+
-	        "<input type='checkbox' id='menu-"+menu.mid+"'> "+menu.nama+
-			" [ "+stk+" ]</span>"+
+			"<li class='menu-list'>"+menu.nama+" [ "+stk+" ]"+
 			"<span class='menu-qty'>"+
-	        "<input type='number' size='4' id='menu-"+menu.mid+"-qty' onFocus=checkMe('menu-"+menu.mid+"') />"+
+	        "<a href='#' onClick=setOrderQty('"+menu.mid+"')>Pick</a>"+
 			"</span>"+
 			"</li> "
 			);
@@ -23,6 +21,7 @@ $("document").ready(function(){
 	});
 	
 	$("#done").click(function(){
+		/*
 		var menu = {};
 		menu.dipilih = [];
 		menu.qty=[];
@@ -45,7 +44,7 @@ $("document").ready(function(){
 			function(result){
 			$("#yrOrder").html(result);
 		});
-				
+		*/	
 		window.location="order.html";
 				
 	});
@@ -56,8 +55,33 @@ $("document").ready(function(){
 		$('#yrOrder').html('');
 	});
 	
+	$('#mdOrder').on('shown.bs.modal',function(){
+		$("#fqty").focus();
+	})
+	
+	$('#orderQty').submit(function(){
+		var mid=$('#fmid').val();
+		var qty=$('#fqty').val();
+		//$('#mdOrder').modal('hide');
+		//alert("order "+oid+" pesan "+mid+" sebanyak "+qty);
+		$.post(urlservice+'orderMenu.php',{
+			oid : oid,
+			mid : mid,
+			qty : qty
+		},function(result){
+			$('#yrOrder').html(result);
+		});
+	});
 });
 		
 function checkMe(cbid){
   $('#'+cbid).prop('checked',true);
+}
+
+function setOrderQty(mid){
+	$("#mdOrder").modal('show');
+	$("#foid").val(oid);
+	$("#fmid").val(mid);
+	$("#fqty").val('');
+	$("#yrOrder").html('');
 }
