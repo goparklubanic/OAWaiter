@@ -3,23 +3,25 @@ var cat = localStorage.getItem('cat');
 var oid = localStorage.getItem('order_id');
 $("document").ready(function(){
 
-	
+
 	$('#cat').html(cat.toUpperCase());
-	
+
 	$.getJSON(urlservice+'menuList.php?cat='+cat,function(menus){
 		$.each(menus,function(index,menu){
 			var stok = parseInt(menu.stok);
 			if(stok >=10 ){ var stk='10+'; }else{ var stk=menu.stok; }
 			$('#menuList').append(
-			"<li class='menu-list'>"+menu.nama+" [ "+stk+" ]"+
+			"<li class='menu-list'>"+menu.nama+
 			"<span class='menu-qty'>"+
-	        "<a href='#' onClick=setOrderQty('"+menu.mid+"')>Pick</a>"+
+	        "<input type='number' id='"+menu.mid+"' size='4'>"+
+					"<a href='#' onClick=sendOrder('"+menu.mid+"')>"+
+					"<img src='./img/cekmark.png' height='18px'/></a>"+
 			"</span>"+
 			"</li> "
 			);
 		});
 	});
-	
+
 	$("#done").click(function(){
 		/*
 		var menu = {};
@@ -32,7 +34,7 @@ $("document").ready(function(){
 				var menuid = $(this).attr("id");
 				var menuqty = $("#"+menuid+'-qty').val();
 				menu.qty.push(menuqty);
-			} 
+			}
 		});
 		//		console.log("Menu Id: ",menu.dipilih);
 		//		console.log("Menu Qt: ",menu.qty);
@@ -44,21 +46,21 @@ $("document").ready(function(){
 			function(result){
 			$("#yrOrder").html(result);
 		});
-		*/	
+		*/
 		window.location="order.html";
-				
+
 	});
-			
+
 	$('#ulang').click(function(){
 		$('input[type=checkbox]').prop('checked',false);
 		$('input[type=number]').val('');
 		$('#yrOrder').html('');
 	});
-	
+
 	$('#mdOrder').on('shown.bs.modal',function(){
 		$("#fqty").focus();
 	})
-	
+
 	$('#orderQty').submit(function(){
 		var mid=$('#fmid').val();
 		var qty=$('#fqty').val();
@@ -73,7 +75,7 @@ $("document").ready(function(){
 		});
 	});
 });
-		
+
 function checkMe(cbid){
   $('#'+cbid).prop('checked',true);
 }
@@ -84,4 +86,16 @@ function setOrderQty(mid){
 	$("#fmid").val(mid);
 	$("#fqty").val('');
 	$("#yrOrder").html('');
+}
+
+function sendOrder(mid){
+	var qty = $("input[id='"+mid+"']").val();
+
+	$.post(urlservice+'orderMenu.php',{
+		oid : oid,
+		mid : mid,
+		qty : qty
+	},function(result){
+		$('#yrOrder').html(result);
+	});
 }
