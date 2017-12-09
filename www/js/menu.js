@@ -90,12 +90,15 @@ function setOrderQty(mid){
 
 function sendOrder(mid){
 	var qty = $("input[id='"+mid+"']").val();
-
-	$.post(urlservice+'orderMenu.php',{
-		oid : oid,
-		mid : mid,
-		qty : qty
-	},function(result){
-		$('#yrOrder').html(result);
-	});
+  if(qty == 0 || qty == null ){
+		alert('Min. order = 1');
+	}else{
+		$.post(urlservice+'orderMenu.php',{
+			oid : oid,
+			mid : mid,
+			qty : qty
+		},function(result){
+			$('#yrOrder').html(result);
+		});
+	}
 }
