@@ -1,4 +1,5 @@
 $('document').ready(function(){
+	cekSession();
 	$('#btnMOrder').click(function(){
 		window.location="mOrder.html";
 	});
@@ -12,3 +13,13 @@ $('document').ready(function(){
 	});
 });
  
+function cekSession(){
+	let waiter = localStorage.getItem('waiter');
+	if( waiter == null || waiter == ''){
+		console.log('Belum Login');
+		window.location.href='login.html';
+	}else{
+		console.log(waiter);
+		$("#lowa").html(waiter);
+	}
+}

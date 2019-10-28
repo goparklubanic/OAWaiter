@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+    style-src 'self' 'unsafe-inline'; 
+    media-src *; 
+    img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="row" style="margin-top: 50px; margin-bottom: 25px; text-align: center;">
+            <div class="col-sm-12">
+                <h3 style="font-size: 44px; color: #7e5c00;">Login Waiter</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form id="login-box">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" value="slamet">
+                    </div>
+                    <div class="form-group" style="text-align:right; padding-right: 20px;">
+                        <button class="btn btn-primary" id="login">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </body>
+  <!--script src="js/parawaiters.js"></script-->
+  <script src="js/sha256.js"></script>
+  <script src="js/login.js"></script>
+
+</html>
