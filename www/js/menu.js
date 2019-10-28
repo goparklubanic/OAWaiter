@@ -7,15 +7,16 @@ $("document").ready(function(){
 	$('#cat').html(cat.toUpperCase());
 
 	$.getJSON(urlservice+'menuList.php?cat='+cat,function(menus){
+		// console.log(menus);
 		$.each(menus,function(index,menu){
 			var stok = parseInt(menu.stok);
 			if(stok >=10 ){ var stk='10+'; }else{ var stk=menu.stok; }
 			$('#menuList').append(
 			"<li class='menu-list'>"+menu.nama+
 			"<span class='menu-qty'>"+
-	        "<input type='number' id='"+menu.mid+"' size='4'>"+
-					"<a href='#' onClick=sendOrder('"+menu.mid+"')>"+
-					"<img src='./img/cekmark.png' height='18px'/></a>"+
+	        "<input type='number' class='menuId' id='"+menu.mid+"' size='4' min=0 value=0 max="+menu.stok+">"+
+			"<!-- a href='#' onClick=sendOrder('"+menu.mid+"')>"+
+			"<img src='./img/cekmark.png' height='18px'/></a-->"+
 			"</span>"+
 			"</li> "
 			);
@@ -23,32 +24,17 @@ $("document").ready(function(){
 	});
 
 	$("#done").click(function(){
-		/*
-		var menu = {};
-		menu.dipilih = [];
-		menu.qty=[];
-
-		$("input:checkbox").each(function() {
-			if ($(this).is(":checked")) {
-				menu.dipilih.push($(this).attr("id"));
-				var menuid = $(this).attr("id");
-				var menuqty = $("#"+menuid+'-qty').val();
-				menu.qty.push(menuqty);
+		let mid = jQuery("#menuList input.menuId");
+		let orderSet = [] , orderData = {};
+		mid.each(function(){
+			let menuId = $(this).prop('id');
+			let qntity = $(this).val();
+			if( qntity > 0 ){
+				orderData = {'mid':menuId , 'qty':qntity };
+				orderSet.push(orderData);
 			}
-		});
-		//		console.log("Menu Id: ",menu.dipilih);
-		//		console.log("Menu Qt: ",menu.qty);
-		$.post(urlservice+'orderMenu.php',{
-			oid: oid,
-			mid: menu.dipilih,
-			qty: menu.qty
-			},
-			function(result){
-			$("#yrOrder").html(result);
-		});
-		*/
-		window.location="order.html";
-
+		})
+		sendOrder(orderSet);
 	});
 
 	$('#ulang').click(function(){
@@ -89,16 +75,12 @@ function setOrderQty(mid){
 }
 
 function sendOrder(mid){
-	var qty = $("input[id='"+mid+"']").val();
-  if(qty == 0 || qty == null ){
-		alert('Min. order = 1');
-	}else{
+	
 		$.post(urlservice+'orderMenu.php',{
 			oid : oid,
-			mid : mid,
-			qty : qty
+			set : mid
 		},function(result){
 			$('#yrOrder').html(result);
+			setTimeout(function(){ window.location.href="order.html"; }, 2000);
 		});
-	}
 }
