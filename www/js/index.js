@@ -11,6 +11,12 @@ $('document').ready(function(){
 	$('#btnOrdLst').click(function(){
 		window.location="unpaidList.html";
 	});
+
+	$("#Logout").click( function(){
+		alert("yakin?");
+		localStorage.setItem('waiter',null);
+		window.location="login.html";
+	})
 });
  
 function cekSession(){
