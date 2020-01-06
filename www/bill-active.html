@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+        content="default-src 'self' * data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
         style-src 'self' 'unsafe-inline'; 
         media-src *; 
         img-src 'self' data: content:;">
@@ -20,10 +20,10 @@
         <!-- self script -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="js/omahAl.js" ></script>
-        <script type="text/javascript" src="js/index.js" ></script>
+        <script type="text/javascript" src="js/bill-active.js" ></script>
         <!-- self script -->
         
-        <title>spicy ayam</title>
+        <title>Tagihan Aktif</title>
     </head>
     <body>
 <!--- navigation bar collapsible -->
@@ -40,10 +40,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="./index.html">Home</a></li>
-        <li><a id="btnMOrder"  style="color:#FFFF99;">Make An Order</a></li>
-        <li><a id="btnUnpaid" style="color:#FFFFAA;">Add More Menu</a></li>
-        <li><a id="btnOrdLst" style="color:#FFFFBB;">Order List</a></li>
-        <li><a id="btnAtBill" style="color:#FFFFBB;">Tagihan Aktif</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a><span class='glyphicon' id="lowa"></span></a></li>
@@ -54,33 +50,19 @@
 </nav>
 <!--- navigation bar collapsible -->
 	  <div class='appHeader'>
-	  <p>Menu hari ini</p>
+	  <p>Tagihan Aktif</p>
 	  </div>
 	  <div class='appContent'>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 1</p>
-       </div>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 2</p>
-       </div>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 3</p>
-       </div>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 4</p>
-       </div>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 5</p>
-       </div>
-       <div class="menu-img">
-		   <img src="img/mangkok.png" />
-		   <p>Menu 6</p>
-       </div>
+          <table class="table table-sm">
+              <thead>
+                  <tr>
+                      <th>ID Order <br> Kustomer</th>
+                      <th>Jumlah</th>
+                  </tr>
+              </thead>
+              <tbody id="ab"></tbody>
+          </table>
+       
        </div> <!-- appContent -->
        <div class='clearfix'>&nbsp;</div>
        <div class='appFooter'>

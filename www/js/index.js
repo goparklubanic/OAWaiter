@@ -12,6 +12,14 @@ $('document').ready(function(){
 		window.location="unpaidList.html";
 	});
 
+	$('#btnOrdLst').click(function(){
+		window.location="unpaidList.html";
+	});
+
+	$('#btnAtBill').click(function(){
+		window.location="bill-active.html";
+	});
+
 	$("#Logout").click( function(){
 		alert("yakin?");
 		localStorage.setItem('waiter',null);

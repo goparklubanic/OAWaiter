@@ -14,7 +14,7 @@ $("document").ready(function(){
 			$('#menuList').append(
 			"<li class='menu-list'>"+menu.nama+
 			"<span class='menu-qty'>"+
-	        "<input type='number' class='menuId' id='"+menu.mid+"' size='4' min=0 value=0 max="+menu.stok+">"+
+	        	"<input type='number' class='menuId' id='"+menu.mid+"' size='4' min=0 value=0 max="+menu.stok+">"+
 			"<!-- a href='#' onClick=sendOrder('"+menu.mid+"')>"+
 			"<img src='./img/cekmark.png' height='18px'/></a-->"+
 			"</span>"+
