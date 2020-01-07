@@ -21,36 +21,13 @@
         <!-- self script -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="js/omahAl.js" ></script>
-        <script type="text/javascript" src="js/bill-detail.js" ></script>
+        <script type="text/javascript" src="js/bill-cetak.js" ></script>
         <!-- self script -->
         
         <title>Tagihan Aktif</title>
     </head>
     <body>
-<!--- navigation bar collapsible -->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="./"><p style="color:#FFF;">Friend's Seafood</p></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.html">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a><span class='glyphicon' id="lowa"></span></a></li>
-        <li><a href="#" id="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!--- navigation bar collapsible -->
-	  <div class='appHeader'>
+	  <div>
 	  <p>Detil Tagihan<br><span id="oid"></span></p>
 	  </div>
 	  <div class='appContent'>
@@ -68,29 +45,21 @@
                       <td colspan='2'>Jumlah Total</td>
                       <td align='right' id="totag">12000</td>
                   </tr>
+                  <tr>
+                      <td colspan='2'>Dibayar</td>
+                      <td align='right' id="bayar">12000</td>
+                  </tr>
+                  <tr>
+                      <td colspan='2'>Kembalil</td>
+                      <td align='right' id="susuk">12000</td>
+                  </tr>
               </tbody>
-          </table>
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <td>Dibayar</td>
-                <td>
-                  <input type="number" name="" id="dibayar" class="form-control" value=0>
-                </td>
-              </tr>
-                <td>Kembali</td>
-                <td>
-                  <input type="number" name="" id="kembali" class="form-control">
-                </td>
-              </tr>
-            </tbody>
           </table>
        
        </div> <!-- appContent -->
        <div class='clearfix'>&nbsp;</div>
-       <div class='appFooter'>
-		   <p>Have A Fun Meal!</p>
-       </div>
+       <a href="index.html" class='btn btn-primary print-hide'>Kembali</a>
+       <a href="#" id="cetak" class='btn btn-primary print-hide'>Cetak</a>
        <script>
        document.addEventListener("backbutton", onBackKeyDown, false);
  

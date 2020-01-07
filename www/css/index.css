@@ -52,3 +52,6 @@
 	color: #FFF; 
 	text-align:center; 
 	font-size: 18px;}
+@media print {
+	.print-hide { display: none; }
+}

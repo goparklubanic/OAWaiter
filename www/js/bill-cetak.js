@@ -24,32 +24,12 @@ $('document').ready(function(){
             });
             bil = parseInt(tagihan.total);
             $('#totag').text(tagihan.total.toLocaleString('id-ID'));
-            chg = pay - bil;
-            $('#kembali').val(chg);
+            $('#bayar').text( parseInt(localStorage.getItem('bayar')).toLocaleString('id-ID') );
+            $('#susuk').text( parseInt(localStorage.getItem('susuk')).toLocaleString('id-ID') );
         }
     });
 
-    $('#dibayar').keyup(function(){
-        pay = $(this).val();
-        chg = pay - bil;
-        $('#kembali').val(chg);
-    });
-
-	$('#btnOrdLst').click(function(){
-		window.location="bill-active.html";
-	});
-
-	$("#Logout").click( function(){
-		alert("yakin?");
-		localStorage.setItem('waiter',null);
-		window.location="login.html";
+    $('#cetak').click( function(){
+        window.print();
     })
-    
-    $('.appFooter p').click( function(){
-        localStorage.setItem('bayar' , $('#dibayar').val() );
-        localStorage.setItem('susuk' , $('#kembali').val() );
-        window.location.href='bill-cetak.html';
-    })
-
-
 });
