@@ -21,6 +21,33 @@
         <title>spicy ayam</title>
     </head>
     <body>
+      <!--- navigation bar collapsible -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="./index.html"><p style="color:#FFF;">Friend's Seafood</p></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a id="btnMOrder"  style="color:#FFFF99;">Order Baru</a></li>
+            <li><a id="btnUnpaid" style="color:#FFFFAA;">Tambah Menu</a></li>
+            <li><a id="btnOrdLst" style="color:#FFFFBB;">Daftar Order</a></li>
+            <li><a id="btnAtBill" style="color:#FFFFBB;">Tagihan</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a><span class='glyphicon' id="lowa"></span></a></li>
+            <li><a href="#" id="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--- navigation bar collapsible -->
 	  <div class='appHeader'>
 	  <p>DAFTAR ORDER</p>
 	  </div>
@@ -35,6 +62,13 @@
 	  </div>
 	  
 	  <div class="appFooter"><p id="done">Done</p></div>
+    <script>
+    document.addEventListener("backbutton", onBackKeyDown, false);
+
+      function onBackKeyDown() {
+          window.location.href='index.html';
+    }
+    </script>
     </body>
 </html>
 

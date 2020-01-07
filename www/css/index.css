@@ -1,7 +1,12 @@
- .menu-img{
+#homebase {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.menu-img{
 	width:135px; 
 	height:135px; 
-	float:left; 
 	margin: 5px 10px; 
 	top: 10px;
 	left:50px; 
