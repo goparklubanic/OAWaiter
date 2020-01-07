@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.klubaners.cafe" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Omah AL</name>
+<widget id="com.klubaners.cafe" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Friends Seafood</name>
     <description>
-        App For Omah Al Waiters .... !
+        Mobile Resto Service
     </description>
     <author email="nugroho.redbuff@gmail.com" href="https://klubaner.web.id">
         Nugroho Bin Purboyuwono
@@ -17,7 +17,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-		<preference name="SplashScreen" value="screen" />
+	<preference name="SplashScreen" value="screen" />
+	<preference name="android-minSdkVersion" value="21" />
         <allow-intent href="market:*" />
 		<!-- you can use any density that exists in the Android project -->
 		<icon src="res/icon/android/icon-36-ldpi.png" density="ldpi" />
