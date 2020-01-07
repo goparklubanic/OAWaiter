@@ -30,6 +30,12 @@ $('document').ready(function(){
     });
 
     $('#cetak').click( function(){
+        $.ajax({
+            url     : urlservice + `billing-finished.php?oid=${oid}`,
+            success : function(pesan){
+                $('#finor').text(pesan);
+            }
+        })
         window.print();
     })
 });
