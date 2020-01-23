@@ -1,5 +1,18 @@
 $('document').ready(function(){
 	cekSession();
+
+	$.getJSON(urlservice + `todayMenu.php` , function(menus){
+		$('#homebase div').remove();
+		$.each( menus , function(i,data){
+			$('#homebase').append(`
+			<div class="menu-img">
+			<img src="`+imgservice+`/${data.photo}" />
+			<p>${data.nama}</p>
+			</div>
+			`);
+		})
+	});
+
 	$('#btnMOrder').click(function(){
 		window.location="mOrder.html";
 	});
