@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Friends Seafood",
+  "short_name": "Friends Seafood",
+  "version": "com.klubaners.cafe",
+  "description": "Mobile Resto Service",
+  "author": "Nugroho Bin Purboyuwono",
+  "icons": [],
+  "start_url": "index.html"
+}

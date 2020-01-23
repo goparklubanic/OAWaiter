@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self' * data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+        style-src 'self' 'unsafe-inline';
+        script-src * data: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval';
+        media-src *; 
+        img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <!-- bootstrap -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <script type="text/javascript" src="js/jquery.min.js" ></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <!-- bootstrap -->
+        
+        <!-- self script -->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/omahAl.js" ></script>
+        <script type="text/javascript" src="js/bill-active.js" ></script>
+        <!-- self script -->
+        
+        <title>Tagihan Aktif</title>
+    </head>
+    <body>
+<!--- navigation bar collapsible -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="./"><p style="color:#FFF;">Friend's Seafood</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./index.html">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a><span class='glyphicon' id="lowa"></span></a></li>
+        <li><a href="#" id="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--- navigation bar collapsible -->
+	  <div class='appHeader'>
+	  <p>Tagihan Aktif</p>
+	  </div>
+	  <div class='appContent'>
+          <table class="table table-sm">
+              <thead>
+                  <tr>
+                      <th>ID Order <br> Kustomer</th>
+                      <th>Jumlah</th>
+                  </tr>
+              </thead>
+              <tbody id="ab"></tbody>
+          </table>
+       
+       </div> <!-- appContent -->
+       <div class='clearfix'>&nbsp;</div>
+       <div class='appFooter'>
+		   <p>Have A Fun Meal!</p>
+       </div>
+       <script>
+       document.addEventListener("backbutton", onBackKeyDown, false);
+ 
+         function onBackKeyDown() {
+             window.location.href='index.html';
+       }
+       </script>
+    </body>
+</html>

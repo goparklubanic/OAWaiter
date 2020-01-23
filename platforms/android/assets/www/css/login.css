@@ -1,0 +1,14 @@
+html,body {
+    background-color: rgb(253, 249, 195);
+}
+
+#login-box{
+    min-width: 250px; width: 90%; max-width: 350px;
+    background-color: rgb(196, 191, 132); margin: auto;
+    border-radius: 15px; box-shadow: 0px 0px 5px rgb(100, 97, 46);
+    padding: 30px;
+}
+
+#login-box > .form-group > input {
+    padding: 25px 10px; font-size: 18px;
+}

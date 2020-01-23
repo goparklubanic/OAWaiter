@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <input type="text" name="usepas" id="usepas" value="batura$$$bekgor" size='50'>
+        <button id="bungkus">hash</button>
+    </div>
+    <div>
+        <input type="text" name="keenkrip" id="keenkrip" size='70'>
+        <button id="waiter">indexOf</button>
+    </div>
+    <script src="js/parawaiters.js"></script>
+    <script src="js/sha256.js"></script>
+    <script>
+    $(document).ready( function(){
+        $("#bungkus").click( function(){
+            let text = $("#usepas").val();
+            let hash = SHA256(text);
+            $("#keenkrip").val(hash);
+        })
+
+        $("#waiter").click( function(){
+            let kode = $("#keenkrip").val();
+            let indx = keys.indexOf(kode);
+            alert(indx);
+        })
+    })
+    </script>
+    
+</body>
+</html>
